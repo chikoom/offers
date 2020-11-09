@@ -1,0 +1,18 @@
+:root {
+  --color: #222222;
+  --color-primary: #ff7100;
+  --color-secondary: #ee660b;
+  --bg: #f3f3f3;
+  --bg-secondary: #fff;
+  --border-color: #ff7100;
+  --shadow-color: #d9d9d9;
+  --menu-height: 65px;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
