@@ -16,7 +16,7 @@ app.get('/test', (req, res) => {
 module.exports = app
 
 if (require.main === module) {
-  const port = process.env.SERVER_PORT || 3001
+  const port = process.env.PORT || 3001
   app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
   })

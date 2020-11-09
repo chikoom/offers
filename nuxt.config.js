@@ -2,7 +2,6 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'Offers',
-    target: 'static',
     mode: 'universal',
     meta: [
       { charset: 'utf-8' },
