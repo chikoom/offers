@@ -17,9 +17,9 @@ Simlpe sales-board app with user login (JWT), create as Nuxt.js Universal app (S
 
  OR 
  
- 2. Download the **Docker Image** from Here and run :
+ 2. Download the **Docker Image** [from Here](https://we.tl/t-krzDz19e4w) and run :
 
->  docker load -i offers.1.0.0.tar 
+>  docker load -i offers.2.0.0.tar 
 >  docker run -p 3000:3000 offers_board
 > // then browse to http://localhost:3000
 
