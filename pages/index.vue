@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    <hero-block>Offerzzz<br>לוח מודעות וחמוצים</hero-block>
+    <hero-block>Offerzzz<br>לוח מודעות</hero-block>
     <sub-header>כל ההצעות שפורסמו</sub-header>
     <offer-list :offers="loadedOffers" />
   </div>
