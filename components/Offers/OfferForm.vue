@@ -97,8 +97,8 @@ export default {
     },
     clearFields () {
       this.editedOffer.title = null
-      this.editedOffer.description = this.$auth.user.email
-      this.editedOffer.email = null
+      this.editedOffer.description = null
+      this.editedOffer.email = this.$auth.user.email
       this.editedOffer.phone = null
     }
   }
