@@ -11,8 +11,12 @@
     min-height: 300px;
     height: 20vh;
     background-color: var(--color-primary);
-    background-image: url('~assets/images/peopleThinking.jpg');
+    /* background-image: url('~assets/images/peopleThinking.jpg'); */
     background-size: cover;
     background-position: 50% 100%;
+    text-align: center;
+  }
+  .hero-block h1 {
+    color: #fff;
   }
 </style>

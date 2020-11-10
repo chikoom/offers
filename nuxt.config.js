@@ -50,12 +50,18 @@ export default {
   ],
 
   io: {
-    // module options
     sockets: [
       {
-        name: 'offerViewers',
-        url: 'http://localhost:3001',
-        default: true
+        // At least one entry is required
+        name: 'home',
+        url: 'http://localhost:3000',
+        default: true,
+        vuex: {
+          /* see section below */
+        },
+        namespaces: {
+          /* see section below */
+        }
       }
     ]
   },
