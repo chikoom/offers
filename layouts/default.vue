@@ -15,7 +15,7 @@ export default {
     }
   },
   async mounted () {
-    this.socket = await this.$nuxtSocket({ channel: '/' })
+    this.socket = await this.$nuxtSocket({ name: 'home', channel: '/', persist: 'home' })
     this.socket.emit('getViewers')
   }
 }

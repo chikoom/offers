@@ -75,11 +75,27 @@ export default {
   },
   methods: {
     async beforeWindowClose () {
-      await this.$nuxtSocket({ channel: '/' }).emit('removeViewers', { offerId: this.id, userId: this.$store.getters.userUniqueIdentifier })
+      await this.$store.dispatch(
+        '$nuxtSocket/emit', // Remember, "emit" is namespaced to "$nuxtSocket"
+        {
+          label: 'home',
+          evt: 'removeViewers',
+          msg: { offerId: this.id, userId: this.$store.getters.userUniqueIdentifier }
+        }
+      )
+      // await this.$nuxtSocket({ name: 'home', channel: '/', persist: 'home' }).emit('removeViewers', { offerId: this.id, userId: this.$store.getters.userUniqueIdentifier })
     },
     async toggleDetails () {
       const storeAction = this.isDeatilsOpen ? 'removeViewers' : 'updateViewers'
-      await this.$nuxtSocket({ channel: '/' }).emit(storeAction, { offerId: this.id, userId: this.$store.getters.userUniqueIdentifier })
+      await this.$store.dispatch(
+        '$nuxtSocket/emit', // Remember, "emit" is namespaced to "$nuxtSocket"
+        {
+          label: 'home',
+          evt: storeAction,
+          msg: { offerId: this.id, userId: this.$store.getters.userUniqueIdentifier }
+        }
+      )
+      // await this.$nuxtSocket({ name: 'home', channel: '/', persist: 'home' }).emit(storeAction, { offerId: this.id, userId: this.$store.getters.userUniqueIdentifier })
       this.isDeatilsOpen = !this.isDeatilsOpen
     }
   }
