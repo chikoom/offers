@@ -17,14 +17,13 @@ export default {
   async mounted () {
     this.socket = await this.$nuxtSocket({ name: 'home', channel: '/', persist: 'home' })
     await this.$store.dispatch(
-      '$nuxtSocket/emit', // Remember, "emit" is namespaced to "$nuxtSocket"
+      '$nuxtSocket/emit',
       {
         label: 'home',
         evt: 'getViewers',
         msg: {}
       }
     )
-    // this.socket.emit('getViewers')
   }
 }
 </script>
