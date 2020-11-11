@@ -6,15 +6,19 @@
     <the-footer />
   </div>
 </template>
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
+<script>
+
+export default {
   data () {
     return {
       displaySideNav: false
     }
+  },
+  async mounted () {
+    this.socket = await this.$nuxtSocket({ channel: '/' })
+    this.socket.emit('getViewers')
   }
-})
+}
 </script>
 <style>
 html {

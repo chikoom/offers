@@ -22,16 +22,16 @@
         <!-- <button class="offer-preview-more" @click="toggleDetails">
           פרטים נוספים
         </button> -->
-        <span class="offer-preview-viewers">כרגע צופים במודעה 3 אנשים</span>
+        <span class="offer-preview-viewers">כרגע צופים במודעה {{ this.$store.getters.viewersByOfferId(id) }} אנשים</span>
       </div>
     </article>
   </base-card>
 </template>
-<script lang="ts">
-import Vue from 'vue'
+<script>
+// import Vue from 'vue'
 import { shortenText } from '~/components/common/functions'
 
-export default Vue.extend({
+export default {
   name: 'OfferPreview',
   props: {
     id: {
@@ -61,20 +61,29 @@ export default Vue.extend({
   },
   data () {
     return {
-      isDeatilsOpen: false
+      isDeatilsOpen: false,
+      currentlyWatching: 0
     }
   },
   computed: {
-    offerDynamicText ():string {
+    offerDynamicText () {
       return this.isDeatilsOpen ? this.$props.description : shortenText(this.$props.description, 50)
     }
   },
+  mounted () {
+    window.addEventListener('beforeunload', this.beforeWindowClose)
+  },
   methods: {
-    toggleDetails () {
+    async beforeWindowClose () {
+      await this.$nuxtSocket({ channel: '/' }).emit('removeViewers', { offerId: this.id, userId: this.$store.getters.userUniqueIdentifier })
+    },
+    async toggleDetails () {
+      const storeAction = this.isDeatilsOpen ? 'removeViewers' : 'updateViewers'
+      await this.$nuxtSocket({ channel: '/' }).emit(storeAction, { offerId: this.id, userId: this.$store.getters.userUniqueIdentifier })
       this.isDeatilsOpen = !this.isDeatilsOpen
     }
   }
-})
+}
 </script>
 <style scoped>
   .offer-preview{

@@ -87,9 +87,8 @@ export default {
   },
   methods: {
     postOffer() {
-      console.log(this.offerValid)
       if (!this.offerValid) {
-        
+        return 0
       } else {
         this.$emit('submit-data', this.editedOffer)
         this.clearFields()

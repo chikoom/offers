@@ -1,1 +1,20 @@
-[{"id":"1e83d775-b53e-45a0-a742-37eadadc4d03","username":"idanbaron","email":"callforcopy@gmail.com","password":"$2a$10$ChAx0t7bRR8udwhTjk2YYul1suurDqKHvj4k60BbMYIQkxvO1dJVu"},{"id":"02ae3870-a593-4af3-a29e-944e213c0e22","username":"testUser","email":"testUser@gmail.com","password":"$2a$10$L06g3VRva9q3CHfksMAE5.D8Yj09gneQddiAUkGUjYjHLhQ7/hWNG"}]
+[
+  {
+    "id": "1e83d775-b53e-45a0-a742-37eadadc4d03",
+    "username": "idanbaron",
+    "email": "callforcopy@gmail.com",
+    "password": "$2a$10$ChAx0t7bRR8udwhTjk2YYul1suurDqKHvj4k60BbMYIQkxvO1dJVu"
+  },
+  {
+    "id": "02ae3870-a593-4af3-a29e-944e213c0e22",
+    "username": "testUser",
+    "email": "testUser@gmail.com",
+    "password": "$2a$10$L06g3VRva9q3CHfksMAE5.D8Yj09gneQddiAUkGUjYjHLhQ7/hWNG"
+  },
+  {
+    "id": "24203924-2730-400b-a9a6-2f31b187a7d1",
+    "username": "shumil",
+    "email": "shumil@gmail.com",
+    "password": "$2a$10$DyNZVG0Ia9SOjKYHbcIOwOrMj.gqpFK/6mvPTX86AGROt7wm/OrMK"
+  }
+]

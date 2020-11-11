@@ -50,6 +50,7 @@ export default {
   ],
 
   io: {
+    server: [{ ioSvc: '/server/io/' }],
     sockets: [
       {
         // At least one entry is required
@@ -57,7 +58,19 @@ export default {
         url: 'http://localhost:3000',
         default: true,
         vuex: {
-          /* see section below */
+          mutations: [
+            {
+              recieveViewers: 'saveViewers'
+            }
+          ],
+          actions: [
+            {
+              updateViewers: 'updateViewers'
+            },
+            {
+              removeViewers: 'removeViewers'
+            }
+          ]
         },
         namespaces: {
           /* see section below */

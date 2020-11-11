@@ -15,9 +15,6 @@ export default Vue.extend({
   },
   created () {
     this.$store.dispatch('setOffers', this.loadedOffers)
-  },
-  mounted() {
-    this.socket = this.$nuxtSocket({ channel: '/index' })
   }
 })
 </script>
